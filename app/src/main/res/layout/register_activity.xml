@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+
+    <EditText
+        android:id="@+id/nama_user"
+        android:hint="Nama"
+        android:layout_marginTop="41dp"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/no_hp"
+        android:hint="Nomer Handphone"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/email_user"
+        android:hint="Email"
+        android:layout_marginTop="41dp"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/password"
+        android:hint="Password"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/btn_daftar"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_btnorange"
+        android:layout_gravity="center"
+        android:text="Daftar"
+        android:layout_width="321dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="50dp"
+        />
+
+    <TextView
+        android:textColor="@color/biru"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:textSize="18dp"
+        android:layout_gravity="center"
+        android:text="Masuk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
