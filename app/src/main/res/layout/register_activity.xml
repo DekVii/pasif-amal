@@ -8,14 +8,14 @@
 
 
     <EditText
-        android:id="@+id/nama_user"
+        android:id="@+id/reg_nama"
         android:hint="Nama"
         android:layout_marginTop="41dp"
         android:layout_gravity="center"
         android:layout_width="350dp"
         android:layout_height="wrap_content"/>
     <EditText
-        android:id="@+id/no_hp"
+        android:id="@+id/reg_no"
         android:hint="Nomer Handphone"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
@@ -23,14 +23,14 @@
         android:layout_height="wrap_content"/>
 
     <EditText
-        android:id="@+id/email_user"
+        android:id="@+id/reg_email"
         android:hint="Email"
         android:layout_marginTop="41dp"
         android:layout_gravity="center"
         android:layout_width="350dp"
         android:layout_height="wrap_content"/>
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/reg_password"
         android:hint="Password"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
