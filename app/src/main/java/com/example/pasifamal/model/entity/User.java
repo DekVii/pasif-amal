@@ -1,27 +1,25 @@
-package com.example.pasifamal.roomdatabase;
-
-import android.provider.ContactsContract;
+package com.example.pasifamal.model.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "User")
-public class UserEntity {
+@Entity(tableName = "user")
+public class User {
 
     @PrimaryKey(autoGenerate = true)
     Integer id;
 
-    @ColumnInfo(name = "Email")
+    @ColumnInfo(name = "email")
     String email;
 
-    @ColumnInfo(name = "Password")
+    @ColumnInfo(name = "password")
     String password;
 
-    @ColumnInfo(name = "Nama")
+    @ColumnInfo(name = "nama")
     String nama;
 
-    @ColumnInfo(name = "No_hp")
+    @ColumnInfo(name = "no_hp")
     Integer no_hp;
 
     public Integer getId() {

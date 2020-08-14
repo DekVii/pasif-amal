@@ -1,8 +1,11 @@
-package com.example.pasifamal;
+package com.example.pasifamal.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.pasifamal.R;
+import com.example.pasifamal.ui.RegisterFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fragmentOpen() {
-        RegisterFragment registerFragment = new RegisterFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.host_fragment, registerFragment).commit();
+        LoginFragment loginFragment = new LoginFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.host_fragment, loginFragment).commit();
     }
 }
