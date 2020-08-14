@@ -1,8 +1,11 @@
 package com.example.pasifamal.ui;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,10 +26,12 @@ public class LoginFragment extends Fragment implements LoginView {
 
     private EditText edEmail, edPassword;
     private Button btnMasuk;
+    private TextView tvRegis;
 
     public UserDatabase uDatabase;
     private LoginPresenter loginPresenter;
     private TextView mTextEmpty;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,10 +46,11 @@ public class LoginFragment extends Fragment implements LoginView {
         uDatabase = UserDatabase.getUserDatabase(getActivity());
         loginPresenter = new LoginPresenterImp(this, uDatabase.userDAO());
 
+        action_text(v);
         btnMasuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                viewUser();
             }
         });
         return v;
@@ -52,6 +58,24 @@ public class LoginFragment extends Fragment implements LoginView {
 
     @Override
     public void viewUser() {
+        NavHostFragment.findNavController(LoginFragment.this)
+                .navigate(R.id.action_fLogin_to_fHome);
+    }
 
+    @Override
+    public void regisUser() {
+        NavHostFragment.findNavController(LoginFragment.this)
+                .navigate(R.id.action_fLogin_to_fRegister);
+    }
+
+    public void action_text(View view){
+        tvRegis = (TextView) view.findViewById(R.id.btn_regis);
+        tvRegis.setTextColor(Color.BLUE);
+        tvRegis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                regisUser();
+            }
+        });
     }
 }

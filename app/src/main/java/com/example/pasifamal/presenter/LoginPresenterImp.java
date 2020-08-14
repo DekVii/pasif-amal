@@ -1,5 +1,7 @@
 package com.example.pasifamal.presenter;
 
+import android.view.View;
+
 import com.example.pasifamal.model.UserDAO;
 import com.example.pasifamal.view.LoginView;
 
@@ -16,4 +18,10 @@ public class LoginPresenterImp implements LoginPresenter{
     public void loginUser() {
         loginView.viewUser();
     }
+
+    @Override
+    public void regisUser() {
+        loginView.regisUser();
+    }
+
 }

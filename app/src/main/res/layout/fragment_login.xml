@@ -28,6 +28,7 @@
         <EditText
             android:id="@+id/user_email"
             android:hint="Email"
+            android:inputType="textEmailAddress"
             android:layout_marginTop="41dp"
             android:layout_gravity="center"
             android:layout_width="350dp"
@@ -35,6 +36,7 @@
         <EditText
             android:id="@+id/user_password"
             android:hint="Password"
+            android:inputType="textPassword"
             android:layout_marginTop="30dp"
             android:layout_gravity="center"
             android:layout_width="350dp"
@@ -52,13 +54,16 @@
             />
 
         <TextView
+            android:id="@+id/btn_regis"
             android:textColor="@color/biru"
             android:layout_marginTop="20dp"
-            android:clickable="true"
-            android:textSize="18dp"
             android:layout_gravity="center"
+            android:focusable="true"
+            android:clickable="true"
+            android:onClick="action_text"
+            android:textSize="18dp"
             android:text="Daftar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </FrameLayout>
