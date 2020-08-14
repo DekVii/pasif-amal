@@ -3,6 +3,7 @@ package com.example.pasifamal.presenter;
 import android.view.View;
 
 import com.example.pasifamal.model.UserDAO;
+import com.example.pasifamal.model.entity.User;
 import com.example.pasifamal.view.LoginView;
 
 public class LoginPresenterImp implements LoginPresenter{
@@ -15,13 +16,13 @@ public class LoginPresenterImp implements LoginPresenter{
     }
 
     @Override
-    public void loginUser() {
-        loginView.viewUser();
+    public void loginUser(User user) {
+        loginView.viewUser(user.id);
     }
 
     @Override
     public void regisUser() {
-        loginView.regisUser();
+        loginView.openRegis();
     }
 
 }

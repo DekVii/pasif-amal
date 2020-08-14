@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.pasifamal.R;
 import com.example.pasifamal.model.UserDatabase;
+import com.example.pasifamal.model.entity.User;
 import com.example.pasifamal.presenter.AuthPresenterImp;
 import com.example.pasifamal.presenter.LoginPresenter;
 import com.example.pasifamal.presenter.LoginPresenterImp;
@@ -29,43 +30,31 @@ public class LoginFragment extends Fragment implements LoginView {
     private TextView tvRegis;
 
     public UserDatabase uDatabase;
-    private LoginPresenter loginPresenter;
+    private LoginPresenterImp loginPresenterImp;
     private TextView mTextEmpty;
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_login, container, false);
+        final View v = inflater.inflate(R.layout.fragment_login, container, false);
 
         edEmail = (EditText)getActivity().findViewById(R.id.user_email);
         edPassword = (EditText)getActivity().findViewById(R.id.user_password);
         btnMasuk = (Button)v.findViewById(R.id.btn_masuk);
 
         uDatabase = UserDatabase.getUserDatabase(getActivity());
-        loginPresenter = new LoginPresenterImp(this, uDatabase.userDAO());
+        loginPresenterImp = new LoginPresenterImp(this, uDatabase.userDAO());
 
         action_text(v);
         btnMasuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewUser();
+                loginPresenterImp.loginUser();
             }
         });
         return v;
-    }
-
-    @Override
-    public void viewUser() {
-        NavHostFragment.findNavController(LoginFragment.this)
-                .navigate(R.id.action_fLogin_to_fHome);
-    }
-
-    @Override
-    public void regisUser() {
-        NavHostFragment.findNavController(LoginFragment.this)
-                .navigate(R.id.action_fLogin_to_fRegister);
     }
 
     public void action_text(View view){
@@ -74,8 +63,21 @@ public class LoginFragment extends Fragment implements LoginView {
         tvRegis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                regisUser();
+                openRegis();
             }
         });
     }
+
+    @Override
+    public void viewUser(Integer id) {
+        NavHostFragment.findNavController(LoginFragment.this)
+                .navigate(R.id.action_fLogin_to_fHome);
+    }
+
+    @Override
+    public void openRegis() {
+        NavHostFragment.findNavController(LoginFragment.this)
+                .navigate(R.id.action_fLogin_to_fRegister);
+    }
+
 }
